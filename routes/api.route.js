@@ -10,6 +10,7 @@ const ApiRouter = express.Router();
 ApiRouter.post('/register', async (req, res) => {
     try {
         const { email, password, name } = req.body;
+        console.log(req.body);
         const user = await db.User.findOne({ email });
         if (user) {
             return res.status(400).send({ message: "User already exists" });
@@ -58,8 +59,15 @@ ApiRouter.post('/login', async (req, res) => {
     }
 });
 
-ApiRouter.get('/protected', verifyToken, (req, res) => {
-    res.json({ message: 'This is a protected route', userId: req.userId, role: req.role });
+ApiRouter.get('/protected', verifyToken, async (req, res) => {
+    res.status(200).json({
+        message: 'This is a protected route',
+        user: {
+            userId: req.userId,
+            role: req.role
+        }
+
+    });
 });
 
 
