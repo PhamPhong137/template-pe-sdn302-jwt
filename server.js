@@ -33,8 +33,8 @@ app.use(async (err, req, res, next) => {
         });
 })
 
-const HOSTNAME = process.env.HOSTNAME;
-const PORT = process.env.PORT;
+const HOSTNAME = process.env.HOSTNAME || "localhost";
+const PORT = process.env.PORT || 9999;
 
 app.listen(PORT, HOSTNAME, () => {
     console.log(`Server running at: http://${HOSTNAME}:${PORT}`);
