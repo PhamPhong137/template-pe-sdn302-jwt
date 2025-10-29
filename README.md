@@ -7,7 +7,7 @@ To set up the project, follow these steps:
 1. **Clone the Repository**:
    Open your terminal and run the following command to clone the repository:
    ```bash
-   git clone hhttps://github.com/PhamPhong137/template-pe-sdn302-jwt.git
+   git clone https://github.com/PhamPhong137/template-pe-sdn302-jwt.git
    ```
 
 2. **Navigate to the Project Directory**:
